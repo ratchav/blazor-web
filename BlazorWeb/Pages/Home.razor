@@ -1,4 +1,27 @@
 ﻿@page "/"
+@inject IJSRuntime JS
 
 <PageTitle>Home</PageTitle>
- 
+<script>
+    function toggleMessage() {
+        $("#message").toggle();
+    }
+</script>
+
+<h3>Blazor WebAssembly with jQuery</h3>
+
+<div id="message" style="display:none;">
+    Hello from jQuery!
+</div>
+
+<button @onclick="ToggleMessage">Toggle Message</button>
+
+@code {
+    private async Task ToggleMessage()
+    {
+        await JS.InvokeVoidAsync("toggleMessage");
+    }
+
+
+
+}

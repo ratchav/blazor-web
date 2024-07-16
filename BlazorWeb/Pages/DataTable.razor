@@ -1,0 +1,295 @@
+﻿@page "/DataTable"
+@inject IJSRuntime JS
+
+<script>
+    // $('#table').DataTable({
+    //     data: [
+    //         {
+    //             "name": "Tiger Nixon",
+    //             "position": "System Architect",
+    //             "salary": "$3,120",
+    //             "start_date": "2011/04/25",
+    //             "office": "Edinburgh",
+    //             "extn": "5421"
+    //         },
+    //         {
+    //             "name": "Garrett Winters",
+    //             "position": "Director",
+    //             "salary": "$5,300",
+    //             "start_date": "2011/07/25",
+    //             "office": "Edinburgh",
+    //             "extn": "8422"
+    //         }
+    //     ],
+    //     columns: [
+    //         { data: 'name' },
+    //         { data: 'position' },
+    //         { data: 'salary' },
+    //         { data: 'office' }
+    //     ]
+    // });
+
+    function DrawDataTable(data) {
+        $('#datatable-responsive').DataTable({
+            data: data,
+            columns: [
+                { data: 'col1' },
+                { data: 'col2' },
+                { data: 'col3' },
+                { data: 'col4' },
+                { data: 'col5' },
+                { data: 'col6' },
+                { data: 'col7' },
+                { data: 'col8' },
+                { data: 'col9' },
+                { data: 'col10' },
+            ],
+            layout: {
+                topStart: {
+                    buttons: ['copy', 'csv', 'excel', 'pdf', 'print']
+                }
+            }
+        });
+    }
+</script>
+<table id="datatable-responsive"
+       class="table table-striped table-bordered dt-responsive nowrap"
+       cellspacing="0" width="100%">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Account No</th>
+            <th>Thai Name</th>
+            <th>English Name</th>
+            <th>Fee Package</th>
+            <th>Open Date</th>
+            <th>Close Date</th>
+            <th>Account Status</th>
+            <th>WorldCheck Status</th>
+            <th>Confirmation Type</th>
+        </tr>
+    </thead>
+    <tbody>
+    </tbody>
+</table>
+@code {
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            List<DataTableVm> dataTableVms = new()
+            {
+                new()
+                {
+                    col1   ="",
+                    col2   ="20203402",
+                    col3   ="ไทเกอร์ นิกซอน	",
+                    col4   ="Tiger Nixon",
+                    col5   ="Standard",
+                    col6   ="02-JAN-2022",
+                    col7   ="-",
+                    col8   ="Normal",
+                    col9   ="Normal",
+                    col10  ="Both",
+                },
+                new()
+                {
+                    col2   ="20203402",
+                    col3   ="ไทเกอร์ นิกซอน",
+                    col4   ="Tiger Nixon",
+                    col5   ="Standard",
+                    col6   ="02-JAN-2022",
+                    col7   ="-",
+                    col8   ="Normal",
+                    col9   ="Normal",
+                    col10  ="Both",
+                },
+                new()
+                {
+                     col2 ="456236502",
+                     col3 ="Garrett Winters",
+                     col4 ="Garrett Winters",
+                     col5 ="Standard",
+                     col6 ="12-AUG-2002",
+                     col7 ="21-MAR-2024",
+                     col8 ="Normal",
+                     col9 ="Normal",
+                     col10="Both",
+                },
+                new()
+                {
+                    col2 =  "56123452",
+                    col3 =  "Ashton Cox",
+                    col4 =  "Ashton Cox",
+                    col5 =  "Standard",
+                    col6 =  "01-MAR-2021",
+                    col7 =  "-",
+                    col8 =  "Normal",
+                    col9 =  "Normal",
+                    col10=  "Both",
+                },
+                new()
+                {
+                    col2 = "20203402",
+                    col3 = "ไทเกอร์ นิกซอน",
+                    col4 = "Tiger Nixon",
+                    col5 = "Standard",
+                    col6 = "02-JAN-2022",
+                    col7 = "-",
+                    col8 = "Normal",
+                    col9 = "Normal",
+                    col10=  "Both",
+                },
+                new()
+                {
+                    col2 =    "456236502",
+                    col3 =    "Garrett Winters",
+                    col4 =    "Garrett Winters",
+                    col5 =    "Standard",
+                    col6 =    "12-DEC-2020",
+                    col7 =    "-",
+                    col8 =    "Normal",
+                    col9 =    "Normal",
+                    col10=    "Both",
+                },
+                new()
+                {
+                    col2 =   "56123452",
+                    col3 =   "Ashton Cox",
+                    col4 =   "Ashton Cox",
+                    col5 =   "Standard",
+                    col6 =   "01-MAR-2021",
+                    col7 =   "-",
+                    col8 =   "Normal",
+                    col9 =   "Normal",
+                    col10=   "Both",
+                },
+                new()
+                {
+                    col2 =    "20203402",
+                    col3 =    "ไทเกอร์ นิกซอน",
+                    col4 =    "Tiger Nixon",
+                    col5 =    "Standard",
+                    col6 =    "02-JAN-2022",
+                    col7 =    "-",
+                    col8 =    "Normal",
+                    col9 =    "Normal",
+                    col10=    "Both",
+                },
+                new()
+                {
+                    col2 =   "456236502",
+                    col3 =   "Garrett Winters",
+                    col4 =   "Garrett Winters",
+                    col5 =   "Standard",
+                    col6 =   "12-DEC-2020",
+                    col7 =   "-",
+                    col8 =   "Normal",
+                    col9 =   "Normal",
+                    col10=   "Both",
+                },
+                new()
+                {
+                    col2 =   "56123452",
+                    col3 =   "Ashton Cox",
+                    col4 =   "Ashton Cox",
+                    col5 =   "Standard",
+                    col6 =   "01-MAR-2021",
+                    col7 =   "-",
+                    col8 =   "Normal",
+                    col9 =   "Normal",
+                    col10=   "Both",
+                },
+                new()
+                {
+                    col2 =   "20203402",
+                    col3 =   "ไทเกอร์ นิกซอน",
+                    col4 =   "Tiger Nixon",
+                    col5 =   "Standard",
+                    col6 =   "02-JAN-2022",
+                    col7 =   "-",
+                    col8 =   "Normal",
+                    col9 =   "Normal",
+                    col10=   "Both",
+                },
+                new()
+                {
+                    col2 =  "456236502",
+                    col3 =  "Garrett Winters",
+                    col4 =  "Garrett Winters",
+                    col5 =  "Standard",
+                    col6 =  "12-DEC-2020",
+                    col7 =  "-",
+                    col8 =  "Normal",
+                    col9 =  "Normal",
+                    col10=  "Both",
+                },
+                new()
+                {
+                    col2 =  "56123452",
+                    col3 =  "Ashton Cox",
+                    col4 =  "Ashton Cox",
+                    col5 =  "Standard",
+                    col6 =  "01-MAR-2021",
+                    col7 =  "-",
+                    col8 =  "Normal",
+                    col9 =  "Normal",
+                    col10=  "Both",
+                },
+                new()
+                {
+                    col2 =   "20203402",
+                    col3 =   "ไทเกอร์ นิกซอน",
+                    col4 =   "Tiger Nixon",
+                    col5 =   "Standard",
+                    col6 =   "02-JAN-2022",
+                    col7 =   "-",
+                    col8 =   "Normal",
+                    col9 =   "Normal",
+                    col10=   "Both",
+                },
+                new()
+                {
+                    col2 =  "456236502",
+                    col3 =  "Garrett Winters",
+                    col4 =  "Garrett Winters",
+                    col5 =  "Standard",
+                    col6 =  "12-DEC-2020",
+                    col7 =  "-",
+                    col8 =  "Normal",
+                    col9 =  "Normal",
+                    col10=  "Both",
+                },
+                new()
+                {
+                    col2 = "56123452",
+                    col3 = "Ashton Cox",
+                    col4 = "Ashton Cox",
+                    col5 = "Standard",
+                    col6 = "01-MAR-2021",
+                    col7 = "-",
+                    col8 = "Normal",
+                    col9 = "Normal",
+                    col10= "Both",
+                }
+             };
+
+            await JS.InvokeVoidAsync("DrawDataTable", dataTableVms);
+        }
+        base.OnAfterRender(firstRender);
+    }
+
+    public class DataTableVm
+    {
+        public string? col1 { get; set; }
+        public string? col2 { get; set; }
+        public string? col3 { get; set; }
+        public string? col4 { get; set; }
+        public string? col5 { get; set; }
+        public string? col6 { get; set; }
+        public string? col7 { get; set; }
+        public string? col8 { get; set; }
+        public string? col9 { get; set; }
+        public string? col10 { get; set; }
+    }
+}
